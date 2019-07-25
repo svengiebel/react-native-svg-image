@@ -3,7 +3,7 @@
 ### FIXED
 
 - Use `react-native-community/react-native-webview` instead of deprecated WebView from react-native
-- Must have installed `react-native-web-view`-package
+- Must have installed `react-native-webview`-package
 
 ## Load SVG images from network(It does not work with local svg files at the moment)
 
