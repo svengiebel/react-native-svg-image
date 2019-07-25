@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { View, Platform, ActivityIndicator, StyleSheet } from "react-native";
-import WebView from "react-native-webview";
+import { WebView } from "react-native-webview";
 import PropTypes from "prop-types";
 
 export default class SVGImage extends PureComponent {
