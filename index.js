@@ -1,32 +1,43 @@
-import React, { PureComponent } from 'react';
-import { View, Platform, WebView, ActivityIndicator, StyleSheet } from 'react-native';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from "react";
+import { View, Platform, ActivityIndicator, StyleSheet } from "react-native";
+import WebView from "react-native-web-view";
+import PropTypes from "prop-types";
 
 export default class SVGImage extends PureComponent {
   static propTypes = {
     style: PropTypes.any,
     source: PropTypes.shape({
-      uri: PropTypes.string,
+      uri: PropTypes.string
     }).isRequired,
     showWebviewLoader: PropTypes.bool,
-    height: PropTypes.number,
+    height: PropTypes.number
   };
 
   static defaultProps = {
     style: {},
-    source: { uri: '' },
-    showWebviewLoader: Platform.OS === 'android',
-    height: null,
+    source: { uri: "" },
+    showWebviewLoader: Platform.OS === "android",
+    height: null
   };
 
   renderLoader = () => (
-    <View style={[this.props.style, { flex: 1, alignItems: 'center', justifyContent: 'center' }]}>
+    <View
+      style={[
+        this.props.style,
+        { flex: 1, alignItems: "center", justifyContent: "center" }
+      ]}
+    >
       <ActivityIndicator />
     </View>
   );
 
   render() {
-    const { showWebviewLoader, source: { uri }, style, ...restOfProps } = this.props;
+    const {
+      showWebviewLoader,
+      source: { uri },
+      style,
+      ...restOfProps
+    } = this.props;
     const { height, width } = StyleSheet.flatten(style || []);
 
     const html = `
@@ -40,8 +51,8 @@ export default class SVGImage extends PureComponent {
               margin: 0 auto;
             }
             div {
-              width: ${width ? width+'px' : 'auto'};
-              height: ${height ? height+'px' : 'auto'};
+              width: ${width ? width + "px" : "auto"};
+              height: ${height ? height + "px" : "auto"};
             }
             body {
               margin: 0;

@@ -1,5 +1,10 @@
 # react-native-svg-image
 
+### FIXED
+
+- Use `react-native-community/react-native-webview` instead of deprecated WebView from react-native
+- Must have installed `react-native-web-view`-package
+
 ## Load SVG images from network(It does not work with local svg files at the moment)
 
 Simple SVG image renderer with progress loader
@@ -16,22 +21,25 @@ npm install react-native-svg-image --save
 
 ## Props
 
-| Prop | Type | Note |
-|---|---|---|
-| `source` | `ImageSource` | An object containing the svg image `uri`
-| `style` | `WebView` style | This extends [WebView](https://facebook.github.io/react-native/docs/webview.html) styles
-| `<any` | `WebView` props | Any other WebView prop(s)
+| Prop     | Type            | Note                                                                                     |
+| -------- | --------------- | ---------------------------------------------------------------------------------------- |
+| `source` | `ImageSource`   | An object containing the svg image `uri`                                                 |
+| `style`  | `WebView` style | This extends [WebView](https://facebook.github.io/react-native/docs/webview.html) styles |
+| `<any`   | `WebView` props | Any other WebView prop(s)                                                                |
 
 ## <a name="Usage">Usage</a>
 
 ```javascript
-import SVGImage from 'react-native-svg-image';
+import SVGImage from "react-native-svg-image";
 
 const SVGImageComponent = () => (
   <View style={{ flex: 1 }}>
     <SVGImage
       style={{ width: 80, height: 80 }}
-      source={{uri:'https://fluent-panda.appspot.com.storage.googleapis.com/dumbbell.svg'}}
+      source={{
+        uri:
+          "https://fluent-panda.appspot.com.storage.googleapis.com/dumbbell.svg"
+      }}
     />
   </View>
 );
